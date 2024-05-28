@@ -1,15 +1,43 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Pokédex Management System
 
-Currently, two official plugins are available:
+## Descripción
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este proyecto es un sistema de gestión de Pokédex. Permite a los usuarios listar, buscar y ver detalles de los Pokémon. También proporciona la funcionalidad para descargar la información de un Pokémon en formato PDF y soporta paginación en el backend. El frontend de la aplicación está desarrollado utilizando React y React Router, mientras que el backend utiliza Node.js y Express.
 
-## Expanding the ESLint configuration
+## Características
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Listar Pokémon**: Muestra una lista de todos los Pokémon disponibles.
+- **Buscar Pokémon**: Permite a los usuarios buscar Pokémon por nombre.
+- **Ver Detalles de Pokémon**: Muestra la información detallada de un Pokémon específico.
+- **Descargar Información en PDF**: Permite a los usuarios descargar la información de un Pokémon en formato PDF.
+- **Paginación en Backend**: Implementa paginación para manejar grandes volúmenes de datos eficientemente.
+
+## Estructura del Proyecto
+
+```plaintext
+.
+├── public
+│   ├── index.html
+│   └── ...
+├── src
+│   ├── components
+│   │   ├── PokemonList.tsx
+│   │   ├── PokemonDetails.tsx
+│   │   ├── SearchPokemon.tsx
+│   │   └── ...
+│   ├── interfaces
+│   │   └── Pokemon.ts
+│   ├── utils
+│   │   └── pdfDownload.ts
+│   ├── App.tsx
+│   ├── index.tsx
+│   └── ...
+├── package.json
+├── tsconfig.json
+└── README.md
+```
 
 ## Dependencias
 
