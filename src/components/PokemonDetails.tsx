@@ -5,9 +5,24 @@ import { generatePDF } from "../utils/generatePDF";
 import { DetailedPokemon } from "../interfaces/pokemon.interface";
 import { Link } from "react-router-dom";
 
+/**
+ * PokemonDetails Component
+ *
+ * Componente que muestra los detalles de un Pokémon específico y permite descargar la información en PDF.
+ */
+
 export default function PokemonDetails() {
-  const { name } = useParams<{ name: string }>();
+  const { name } = useParams<{ name: string }>(); // Obtiene el parámetro de la URL
+
+  // Estado para almacenar los detalles del Pokémon
   const [pokemon, setPokemon] = useState<DetailedPokemon | null>(null);
+
+  /**
+   * useEffect hook
+   *
+   * Se ejecuta cuando el componente se monta y cada vez que cambia el nombre del Pokémon.
+   * Hace una solicitud a la API para obtener los detalles del Pokémon.
+   */
 
   useEffect(() => {
     const fetchPokemonDetails = async () => {

@@ -1,8 +1,15 @@
 import { Pokemon } from "../interfaces/pokemon.interface";
 
+//Porps tipados que se pasaran a la card
 interface PokemonCardsProps {
   pokemon: Pokemon;
 }
+
+/**
+ * PokemonCard Component
+ *
+ * Componente que muestra la información de un Pokémon en una tarjeta.
+ */
 
 export default function PokemonCard({ pokemon }: PokemonCardsProps) {
   return (

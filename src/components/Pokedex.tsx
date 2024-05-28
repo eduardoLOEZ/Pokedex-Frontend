@@ -4,11 +4,26 @@ import PokemonCard from "./PokemonCard";
 import { Pokemon } from "../interfaces/pokemon.interface";
 import { Link } from "react-router-dom";
 
+/**
+ * Pokedex Component
+ *
+ * Componente que muestra una lista de Pokémon con funcionalidad de búsqueda.
+ */
+
 const Pokedex: React.FC = () => {
+  // Estado para almacenar los Pokémon
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+  // Estado para manejar el valor de búsqueda
   const [search, setSearch] = useState("");
+  // Estado para manejar la carga de datos
   const [loading, setLoading] = useState<boolean>(true);
 
+  /**
+   * useEffect hook
+   *
+   * Se ejecuta cuando el componente se monta y cada vez que cambia el valor de búsqueda.
+   * Hace una solicitud a la API para obtener los Pokémon según el criterio de búsqueda.
+   */
   useEffect(() => {
     const fetchPokemons = async () => {
       try {
@@ -19,7 +34,7 @@ const Pokedex: React.FC = () => {
           }
         );
 
-        setPokemons(response.data);
+        setPokemons(response.data); // Establece el estado de los Pokémon con los datos recibidos
         setLoading(false);
       } catch (error) {
         console.log(error);
