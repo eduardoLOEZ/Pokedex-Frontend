@@ -13,7 +13,7 @@ export default function PokemonDetails() {
     const fetchPokemonDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/api/pokemons/${name}`
+          `https://pokedex-backend-ooi4.onrender.com/api/pokemons/${name}`
         );
         setPokemon(response.data);
       } catch (error) {
